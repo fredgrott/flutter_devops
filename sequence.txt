@@ -1,0 +1,9 @@
+lint
+flutterdeps
+uml
+metrics
+testing
+coverage
+buildvariants
+dartdocs
+derry

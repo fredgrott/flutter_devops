@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test.xml</title>
+    <style type="text/css">
+        body {
+    background-color: white;
+    padding-bottom: 20em;
+    margin: 0;
+    min-height: 15cm;
+}
+
+h1, h2, h3, h4, h5, h6, h7 {
+    font-family: sans-serif;
+}
+
+h1 {
+    background-color: #007acc;
+    color: white;
+    padding: 3mm;
+    margin-top: 0;
+    margin-bottom: 1mm;
+}
+
+.footer {
+    font-style: italic;
+    font-size: small;
+    text-align: right;
+    padding: 1em;
+}
+
+.testsuite {
+    padding-bottom: 2em;
+    margin-left: 1em;
+}
+
+.proplist {
+    width: 100%;
+    margin-bottom: 2em;
+    border-collapse: collapse;
+    border: 1px solid grey;
+}
+
+.proplist th {
+    background-color: silver;
+    width: 5em;
+    padding: 2px;
+    padding-right: 1em;
+    text-align: left;
+}
+
+.proplist td {
+    padding: 2px;
+}
+
+.index-table {
+    width: 90%;
+    margin-left: 1em;
+}
+
+.index-table td {
+    vertical-align: top;
+    width: 50%;
+}
+
+.failure-index {
+
+}
+
+.toc {
+    margin-bottom: 2em;
+    font-family: monospace;
+}
+
+.stdio, pre {
+    min-height: 1em;
+    background-color: #1e1e1e;
+    color: silver;
+    padding: 0.5em;
+}
+.tdpre {
+    background-color: #1e1e1e;
+}
+
+.test {
+    margin-left: 0.5cm;
+}
+
+.outcome {
+    border-left: 1em;
+    padding: 2px;
+}
+
+.outcome-failed {
+    border-left: 1em solid lightcoral;
+}
+
+.stats-table {
+}
+
+.stats-table td {
+    min-width: 4em;
+    text-align: right;
+}
+
+.stats-table .failed {
+    background-color: lightcoral;
+}
+
+.stats-table .passed {
+    background-color: lightgreen;
+}
+
+.matrix-table {
+    table-layout: fixed;
+    border-spacing: 0;
+    width: available;
+    margin-left: 1em;
+}
+
+.matrix-table td {
+    vertical-align: center;
+}
+
+.matrix-table td:last-child {
+    width: 0;
+}
+
+.matrix-axis-name {
+    white-space: nowrap;
+    padding-left: 0.5em;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.matrix-axis-line {
+    border-left: 1px solid black;
+    width: 0.5em;
+}
+
+.matrix-classname {
+    text-align: left;
+    width: 100%;
+    border-top: 2px solid grey;
+    border-bottom: 1px solid silver;
+}
+
+.matrix-casename {
+    text-align: left;
+    font-weight: normal;
+    font-style: italic;
+    padding-left: 1em;
+    border-bottom: 1px solid silver;
+}
+
+.matrix-result {
+    display: block;
+    width: 1em;
+    text-align: center;
+    padding: 1mm;
+    margin: 0;
+}
+
+.matrix-result-combined {
+    white-space: nowrap;
+    padding-right: 0.2em;
+    text-align: right;
+}
+
+.matrix-result-failed {
+    background-color: lightcoral;
+}
+
+.matrix-result-passed {
+    background-color: lightgreen;
+}
+
+.matrix-result-skipped {
+    background-color: lightyellow;
+}
+    </style>
+</head>
+<body>
+    
+<h1>
+    Test Report : test.xml
+</h1>
+<a id="toc"></a>
+<table class="index-table">
+    <tr>
+        <td>
+            <ul class="toc">
+            
+                
+                <li>D:.fredgrttsstuff.GithubProjects.flutter_devops.basic_testing.test.counter
+                <ul>
+                    
+                    <li><a href="#fcac63e9-d382-4336-bfc4-e48523636415">Counter Initial counter value is 0</a></li>
+                    
+                    <li><a href="#bbfd35ce-b76d-4e1f-b089-e8dc41746083">Counter Tap the Plus icon increments the counter</a></li>
+                    
+                    <li><a href="#4af58959-ae0c-49a2-ad2a-ead72a75c7f4">Counter Primary swatch color is blue</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>D:.fredgrttsstuff.GithubProjects.flutter_devops.basic_testing.test.golden_widget
+                <ul>
+                    
+                    <li><a href="#2dc659f4-ab77-4552-b923-0131eb84490f">Basic Golden Tests  Golden test</a></li>
+                    
+                    <li><a href="#fdad0c49-bc6e-4f22-835a-56b3e3ae529e">Basic Golden Tests  DeviceBuilder </a></li>
+                    
+                </ul>
+                </li>
+                
+            
+                
+                <li>D:.fredgrttsstuff.GithubProjects.flutter_devops.basic_testing.test.my_home_page
+                <ul>
+                    
+                    <li><a href="#706d8235-eada-4de6-9667-c2519288a807">Has MyApp and App Title  My home widget has a title and message, using PageObject</a></li>
+                    
+                    <li><a href="#c4399c40-22a9-4d12-a9b0-d2b83c24a5e4">Has MyApp and App Title  Has user Message  My home widget  message, using PageObject</a></li>
+                    
+                    <li><a href="#87a3b474-bfb0-4e34-a7b5-1bd02ceabd2e">Has MyApp and App Title  Has user Message  User pressed add and counter changes  Ensure that when user taps add, it increments text number to one</a></li>
+                    
+                </ul>
+                </li>
+                
+            
+            </ul>
+        </td>
+        <td class="failure-index">
+            <ul class="toc">
+            
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                
+            
+                
+                    
+                    
+                    
+                    
+                    
+                
+            
+                
+                    
+                    
+                    <li><a href="#706d8235-eada-4de6-9667-c2519288a807">[F] D:.fredgrttsstuff.GithubProjects.flutter_devops.basic_testing.test.my_home_page : Has MyApp and App Title  My home widget has a title and message, using PageObject</a></li>
+                    
+                    
+                    
+                    <li><a href="#c4399c40-22a9-4d12-a9b0-d2b83c24a5e4">[F] D:.fredgrttsstuff.GithubProjects.flutter_devops.basic_testing.test.my_home_page : Has MyApp and App Title  Has user Message  My home widget  message, using PageObject</a></li>
+                    
+                    
+                    
+                    
+                
+            
+            </ul>
+        </td>
+    </tr>
+</table>
+
+
+    <div class="testsuite">
+        <h2>Test Suite: D:.fredgrttsstuff.GithubProjects.flutter_devops.basic_testing.test.counter</h2>
+        <a id="c2431178-bb2d-4a1a-980a-041b8e21423f"></a>
+        
+        
+        <h3>Suite Properties</h3>
+        <table class="proplist">
+            
+            <tr>
+                <th>platform</th><td>vm</td>
+            </tr>
+            
+        </table>
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.0 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>3</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>0</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>D:.fredgrttsstuff.GithubProjects.flutter_devops.basic_testing.test.counter</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="fcac63e9-d382-4336-bfc4-e48523636415"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Counter Initial counter value is 0</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>4.3 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="bbfd35ce-b76d-4e1f-b089-e8dc41746083"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Counter Tap the Plus icon increments the counter</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.3 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="4af58959-ae0c-49a2-ad2a-ead72a75c7f4"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Counter Primary swatch color is blue</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.6 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+        <h3>Suite stdout:</h3>
+        <pre class="stdio">Warning: A tag was used that wasn&#39;t specified in dart_test.yaml.
+  golden was used in the test &#34;Counter Primary swatch color is blue&#34;
+</pre>
+        <h3>Suite stderr:</h3>
+        <pre class="stdio">None</pre>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: D:.fredgrttsstuff.GithubProjects.flutter_devops.basic_testing.test.golden_widget</h2>
+        <a id="8e5c215b-e3b3-4899-ae2b-b8e177d3ab41"></a>
+        
+        
+        <h3>Suite Properties</h3>
+        <table class="proplist">
+            
+            <tr>
+                <th>platform</th><td>vm</td>
+            </tr>
+            
+        </table>
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.0 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>2</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>0</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>D:.fredgrttsstuff.GithubProjects.flutter_devops.basic_testing.test.golden_widget</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="2dc659f4-ab77-4552-b923-0131eb84490f"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Basic Golden Tests  Golden test</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>4.3 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="fdad0c49-bc6e-4f22-835a-56b3e3ae529e"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Basic Golden Tests  DeviceBuilder </b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.8 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+        <h3>Suite stdout:</h3>
+        <pre class="stdio">Warning: A tag was used that wasn&#39;t specified in dart_test.yaml.
+  golden was used in the test &#34;Basic Golden Tests  DeviceBuilder &#34;
+</pre>
+        <h3>Suite stderr:</h3>
+        <pre class="stdio">None</pre>
+    
+
+    <div class="testsuite">
+        <h2>Test Suite: D:.fredgrttsstuff.GithubProjects.flutter_devops.basic_testing.test.my_home_page</h2>
+        <a id="3275c2f9-3249-4b8e-9633-153c5a296b77"></a>
+        
+        
+        <h3>Suite Properties</h3>
+        <table class="proplist">
+            
+            <tr>
+                <th>platform</th><td>vm</td>
+            </tr>
+            
+        </table>
+        
+        <h3>Results</h3>
+        <table class="proplist">
+            <tr>
+                <th>Duration</th><td>0.0 sec</td>
+            </tr>
+            <tr>
+                <th>Tests</th><td>3</td>
+            </tr>
+            <tr>
+                <th>Failures</th><td>2</td>
+            </tr>
+        </table>
+
+        <div class="testclasses">
+            <h3>Tests</h3>
+            
+            <div class="testclass">
+                <h4>D:.fredgrttsstuff.GithubProjects.flutter_devops.basic_testing.test.my_home_page</h4>
+                <div class="testcases">
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="706d8235-eada-4de6-9667-c2519288a807"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Has MyApp and App Title  My home widget has a title and message, using PageObject</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>3.9 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>1 error, see stacktrace for details</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>Error:\n\nTest failed. See exception logs above.
+The test description was: My home widget has a title and message, using PageObject</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>????????? EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ???????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+The following TestFailure object was thrown running a test:
+  Expected: (exactly one matching node in the widget tree and Text data &#39;Basic Testing&#39;)
+  Actual: _DescendantFinder:&lt;zero widgets with key [&lt;&#39;Basic Testing&#39;&gt;] that has ancestor(s) with
+type &#34;MyHomePage&#34; that has ancestor(s) with type &#34;MyApp&#34; (ignoring offstage widgets)&gt;
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.&lt;anonymous closure&gt;.&lt;anonymous closure&gt; (file:///D:/fredgrttsstuff/GithubProjects/flutter_devops/basic_testing/test/my_home_page_test.dart:33:7)
+&lt;asynchronous suspension&gt;
+&lt;asynchronous suspension&gt;
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///D:/fredgrttsstuff/GithubProjects/flutter_devops/basic_testing/test/my_home_page_test.dart line 33
+The test description was:
+  My home widget has a title and message, using PageObject
+????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-failed">
+                        <a id="c4399c40-22a9-4d12-a9b0-d2b83c24a5e4"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Has MyApp and App Title  Has user Message  My home widget  message, using PageObject</b></td></tr>
+                            <tr><th>Outcome:</th><td>Failed</td></tr>
+                            <tr><th>Duration:</th><td>0.3 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>1 error, see stacktrace for details</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>Error:\n\nTest failed. See exception logs above.
+The test description was: My home widget  message, using PageObject</pre>
+                        
+                        
+
+                        
+                        
+                        <div class="stdout"><i>Stdout</i><br>
+                            <pre>????????? EXCEPTION CAUGHT BY FLUTTER TEST FRAMEWORK ???????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????
+The following TestFailure object was thrown running a test:
+  Expected: (exactly one matching node in the widget tree and Text data &#39;You have pushed the button
+this many times:&#39;)
+  Actual: _DescendantFinder:&lt;zero widgets with key [&lt;&#39;You have pushed the button this many times:&#39;&gt;]
+that has ancestor(s) with type &#34;MyHomePage&#34; that has ancestor(s) with type &#34;MyApp&#34; (ignoring
+offstage widgets)&gt;
+   Which: means none were found but one was expected
+
+When the exception was thrown, this was the stack:
+#4      main.&lt;anonymous closure&gt;.&lt;anonymous closure&gt;.&lt;anonymous closure&gt; (file:///D:/fredgrttsstuff/GithubProjects/flutter_devops/basic_testing/test/my_home_page_test.dart:42:9)
+&lt;asynchronous suspension&gt;
+&lt;asynchronous suspension&gt;
+(elided one frame from package:stack_trace)
+
+This was caught by the test expectation on the following line:
+  file:///D:/fredgrttsstuff/GithubProjects/flutter_devops/basic_testing/test/my_home_page_test.dart line 42
+The test description was:
+  My home widget  message, using PageObject
+????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????????</pre>
+                        </div>
+                        
+                        
+                    </div>
+                
+                    <div class="test outcome outcome-passed">
+                        <a id="87a3b474-bfb0-4e34-a7b5-1bd02ceabd2e"></a>
+                        <table class="proplist">
+                            <tr><th>Test case:</th><td><b>Has MyApp and App Title  Has user Message  User pressed add and counter changes  Ensure that when user taps add, it increments text number to one</b></td></tr>
+                            <tr><th>Outcome:</th><td>Passed</td></tr>
+                            <tr><th>Duration:</th><td>0.3 sec</td></tr>
+                        
+                            <tr><th>Failed</th><td>None</td></tr>
+                        
+                        
+                        </table>
+
+                        
+                        <pre>None</pre>
+                        
+                        
+
+                        
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+
+
+<p class="footer">
+    Generated by junit2html
+</p>
+</body>
+</html>

@@ -1,3 +1,4 @@
+import 'package:basic_testing/app_vars.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: myAppTitle,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -24,13 +25,22 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: myAppTitle, message: myHomePageMessage,),
     );
   }
 }
 
+// ignore: must_be_immutable
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  static Key titleKey = Key(myAppTitle);
+
+  static Key messageKey = Key(myHomePageMessage);
+
+  late String message;
+
+  // ignore: avoid_unused_constructor_parameters
+  MyHomePage({Key? key, required this.title, required String message})
+      : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -74,6 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        key: const Key('appTitle'),
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -95,12 +106,12 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
+            Text(
+              myHomePageMessage,key: const Key("homepageMessage"),
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              style: Theme.of(context).textTheme.headline4, key: const Key('textCounter'),
             ),
           ],
         ),
@@ -108,6 +119,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
+        key: const Key('addKey'),
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
