@@ -17,6 +17,15 @@ import './step/the_app_is_rendered.dart';
 import './step/screenshot_verified.dart';
 
 void main() {
+
+  setUpAll(() async {
+    // ignore: unused_local_variable
+
+    TestWidgetsFlutterBinding.ensureInitialized();
+  });
+
+
+  
   group('Counter', () {
     testWidgets('Initial counter value is 0', (tester) async {
       await theAppIsRunning(tester);

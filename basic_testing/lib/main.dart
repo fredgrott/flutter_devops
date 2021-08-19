@@ -2,17 +2,21 @@ import 'package:basic_testing/app_vars.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key,}) : super(key: key,);
+
+  
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: myAppTitle,
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -25,21 +29,24 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: myAppTitle, message: myHomePageMessage,),
+      home: MyHomePage(
+        title: myAppTitle,
+        message: myHomePageMessage,
+        
+      ),
     );
   }
 }
 
 // ignore: must_be_immutable
 class MyHomePage extends StatefulWidget {
-  static Key titleKey = Key(myAppTitle);
+  final String title;
+  final String message;
 
-  static Key messageKey = Key(myHomePageMessage);
+  static const Key titleKey = Key('MyHomePage.title');
+  static const Key messageKey = Key('MyHomePage.message');
 
-  late String message;
-
-  // ignore: avoid_unused_constructor_parameters
-  MyHomePage({Key? key, required this.title, required String message})
+  const MyHomePage({Key? key, required this.title, required this.message})
       : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
@@ -50,8 +57,6 @@ class MyHomePage extends StatefulWidget {
   // case the title) provided by the parent (in this case the App widget) and
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
-
-  final String title;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -83,8 +88,8 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-        key: const Key('appTitle'),
+        title: Text(myAppTitle),
+        key: MyHomePage.titleKey,
       ),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -107,11 +112,13 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              myHomePageMessage,key: const Key("homepageMessage"),
+              myHomePageMessage,
+              key: MyHomePage.messageKey,
             ),
             Text(
               '$_counter',
-              style: Theme.of(context).textTheme.headline4, key: const Key('textCounter'),
+              style: Theme.of(context).textTheme.headline4,
+              key: const Key('textCounter'),
             ),
           ],
         ),

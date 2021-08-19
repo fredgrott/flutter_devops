@@ -12,7 +12,7 @@ analyzer:
   # code generation requires to be ignored by the dart-analyzer scanning
   # exclude: [lib/generated/**]
   # using bdd_widget_test to generate steps for BDD testing
-  exclude: [test/**]
+  # exclude: [test/**]
   language:
     strict-raw-types: true
   strong-mode:

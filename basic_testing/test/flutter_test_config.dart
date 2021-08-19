@@ -8,6 +8,7 @@
 // https://github.com/flutter/flutter/issues/72801
 import 'dart:async';
 
+import 'package:flutter_test/flutter_test.dart';
 import 'package:golden_toolkit/golden_toolkit.dart';
 
 /// Test configuration mainly for golden_toolkit plugin.
@@ -24,6 +25,7 @@ import 'package:golden_toolkit/golden_toolkit.dart';
 Future<void> testExecutable(FutureOr<void> Function() testMain) async {
   return GoldenToolkit.runWithConfiguration(
     () async {
+      
       await loadAppFonts();
       await testMain();
     },
