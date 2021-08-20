@@ -1,9 +1,9 @@
 lint
 flutterdeps
 uml
+dartdocs
 metrics
 testing
 coverage
 buildvariants
-dartdocs
 derry
